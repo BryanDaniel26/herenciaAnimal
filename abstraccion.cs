@@ -1,11 +1,18 @@
-using Internal;
+/*
+    Este codigo fuente fue escrito por Bryan Mendez
+    Implementacion de clase uml dada por el maestro
+    Fecha inicio: 7/12/22 Fecha fin: 8/12/22    
+
+*/
+
+
 using System;
 
 abstract class F{
-    private string x = "Ferreiras, Castro";
-    private double y = 1.34E+12;
-    private long z = 98764354;
-    protected byte w = 34;
+    private string x;
+    private double y;
+    private long z;
+    protected byte w;
 
     public F(string x, double y, long z, byte w)
     {
@@ -13,6 +20,14 @@ abstract class F{
         this.y = y;
         this.z = z;
         this.w = w;
+    }
+
+    public F()
+    {
+        x = "Ferreiras Castro";
+        y = 1.34E+12;
+        z = 98764354;
+        w = 34;
     }
 
     public string getX()
@@ -36,16 +51,21 @@ abstract class F{
 
 class G : F
 {
-    private int s = 9998833;
+    private int s;
 
     public G(int s)
     {
         this.s = s;
     }
+    public G()
+    {
+        s =  9998833;
+    }
 
     public override void verObjeto()
     {
         Console.WriteLine("Estado del objeto..");
+        Console.WriteLine(getX(), "\n", getY(), "\n", getZ(), "\n", w);
     }
 }
 
@@ -56,10 +76,11 @@ class teste
         G num = new G();
         num.verObjeto();
 
-        F num1 = new F();
-        num1.getX("Daniel");
-        num1.getY(4353254);
-        num1.getZ(038428435485);
+
+        F num1 = new G();
+        num1.getX();
+        num1.getY();
+        num1.getZ();
         num1.verObjeto();
     }
 }
